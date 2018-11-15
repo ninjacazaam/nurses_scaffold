@@ -1,6 +1,6 @@
 class RosterBuilder
   DEFAULT_CONFIG = {
-    staff_per_shift: 5,
+    nurses_per_shift: 5,
     shift_names: %w[morning evening night],
   }.freeze
 
@@ -8,6 +8,6 @@ class RosterBuilder
     @config = config
   end
 
-  def build(date_range, all_staff)
+  def build(date_range, all_nurses)
   end
 end

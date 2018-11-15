@@ -1,8 +1,8 @@
-class Staff
+class Nurse
   attr_reader :name
 
   def self.build_array(names)
-    names.map { |name| Staff.new(name) }
+    names.map { |name| new(name) }
   end
 
   def initialize(name)
