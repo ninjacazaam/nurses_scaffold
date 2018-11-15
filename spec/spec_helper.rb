@@ -1,5 +1,5 @@
-# require_relative 'support/date_spec_helpers'
-# require_relative 'support/roster_spec_helpers'
+require_relative 'support/date_spec_helpers'
+require_relative 'support/roster_spec_helpers'
 
 RSpec.configure do |config|
   config.expect_with :rspec do |expectations|
