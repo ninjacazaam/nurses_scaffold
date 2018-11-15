@@ -1,3 +1,4 @@
+require 'rostering/roster'
 require 'rostering/day_roster'
 require 'rostering/shift'
 
@@ -46,11 +47,5 @@ module RosterSpecHelpers
     failure_message do |actual|
       "expected that #{day_roster_to_hash(actual)} would be equal #{expected}"
     end
-  end
-
-  def day_containing(staff, shift_name = 'main')
-    result = Rostering::DayRoster.new
-    result.fill_next_shift(Rostering::Shift.new(shift_name, Date.new(2017,1,1)), [staff])
-    result
   end
 end
