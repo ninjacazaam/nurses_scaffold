@@ -1,13 +1,8 @@
-require 'rostering/day_roster'
-
 module Rostering
-  # Describes the nurses assigned to work for particular shifts on a range of days.
+  # Some sort of data stucture representing the roster
   class Roster
-    # An array of DayRoster objects, assumed to be in date order
-    attr_accessor :day_rosters
-
-    def initialize(day_rosters = [])
-      @day_rosters = day_rosters
+    def each_shift
+      raise NotImplementedError, 'You need to implement this method so the output formatter can work'
     end
   end
 end

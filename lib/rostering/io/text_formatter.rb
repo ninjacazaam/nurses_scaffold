@@ -8,20 +8,10 @@ module Rostering
       end
 
       def write_roster(roster)
-        roster.day_rosters.each do |day_roster|
-          write_day_roster day_roster
+        roster.each_shift do |date, shift_name, nurses|
+          nurse_names = nurses.map(&:name).join(', ')
+          io << "#{date.iso8601} | #{shift_name} | #{nurse_names}\n"
         end
-      end
-
-      def write_day_roster(day_roster)
-        io << "#{day_roster.date.iso8601}\n"
-        day_roster.shift_rosters.each do |shift_roster|
-          write_shift_roster shift_roster
-        end
-      end
-
-      def write_shift_roster(shift_roster)
-        io << "  #{shift_roster.name}: " + shift_roster.nurses.map(&:name).join(', ') + "\n"
       end
 
       private

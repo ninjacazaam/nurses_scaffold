@@ -9,32 +9,26 @@ module Rostering
     let(:bilbo) { Nurse.new('Bilbo') }
     let(:frodo) { Nurse.new('Frodo') }
     let(:samwise) { Nurse.new('Samwise') }
+    let(:roster) { double('roster') }
 
     subject { IO::TextFormatter.new(io) }
 
     describe '#write_roster' do
       context 'with no day rosters' do
-        let(:roster) { Roster.new }
-
         it 'writes nothing' do
+          allow(roster).to receive(:each_shift)
+
           subject.write_roster(roster)
           expect(io.string).to eq('')
         end
       end
 
-      context 'with a single day roster with two shifts' do
-        let(:roster) do
-          Roster.new([
-                       DayRoster.new(
-                         jan(10),
-                         [ShiftRoster.new(:morning, [bilbo, frodo]), ShiftRoster.new(:afternoon, [samwise])]
-                       )
-                     ])
-        end
-
+      context 'with a single shift' do
         it 'writes the day, then the nurses for each shift' do
+          allow(roster).to receive(:each_shift).and_yield(jan(10), 'morning', [bilbo, frodo])
+
           subject.write_roster(roster)
-          expect(io.string).to eq("2017-01-10\n  morning: Bilbo, Frodo\n  afternoon: Samwise\n")
+          expect(io.string).to eq("2017-01-10 | morning | Bilbo, Frodo\n")
         end
       end
     end
