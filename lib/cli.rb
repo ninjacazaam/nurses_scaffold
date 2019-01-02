@@ -72,4 +72,3 @@ class CLI
   end
 end
 
-CLI.new.main

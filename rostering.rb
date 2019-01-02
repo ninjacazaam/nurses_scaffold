@@ -1,1 +1,3 @@
-require_relative './lib/command_line_rostering.rb'
+require_relative './lib/cli'
+
+CLI.new.main
