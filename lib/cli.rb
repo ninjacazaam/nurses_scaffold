@@ -18,7 +18,7 @@ end
 class CLI
   def cli_flags
     options = Slop::Options.new
-    options.string '-f', '--filename', 'a file to import', required: true
+    options.string '-f', '--filename', 'a nurses file to import', required: true
     options.date '-s', '--start-date', 'the first date of the period to roster, in YYYY-MM-DD format', required: true
     options.date '-e', '--end-date', 'the final date of the period to roster, in YYYY-MM-DD format', required: true
     options.bool '-h', '--help', 'Help and usage information'
