@@ -15,3 +15,13 @@ A list of rosterable nurses has been provided in the file spec/functional/nurses
 - To maintain a healthy work/life balance, no nurse can be asked to work for more than 5 days in a row.
 - Similarly, no nurse can be expected to work more than five night shifts per month.
 - Days off must occur in groups of two or more.
+
+## Running
+
+This app is designed to be from the command line using:
+
+```
+ruby rostering.rb
+```
+
+Doing so with no params should print out usage information.

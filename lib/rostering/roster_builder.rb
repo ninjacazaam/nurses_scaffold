@@ -1,3 +1,5 @@
+# Initialize with a certain set of configuration options and then use
+# this to build rosters for specific time periods.
 class RosterBuilder
   DEFAULT_CONFIG = {
     nurses_per_shift: 5,

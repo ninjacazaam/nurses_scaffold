@@ -8,7 +8,7 @@ describe RosterBuilder do
   def build_with(date_range, nurses, config = {})
     default_config = {
       nurses_per_shift: 5,
-      shift_names: %w[morning evening night],
+      shift_names: %w[morning evening night]
     }
     RosterBuilder.new(default_config.merge(config)).build(date_range, nurses)
   end
