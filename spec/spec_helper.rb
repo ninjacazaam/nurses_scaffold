@@ -13,3 +13,7 @@ RSpec.configure do |config|
 
   config.shared_context_metadata_behavior = :apply_to_host_groups
 end
+
+def sample_data_filename(filename)
+  File.join(File.dirname(__FILE__), 'sample_data', filename)
+end

@@ -25,3 +25,5 @@ ruby rostering.rb
 ```
 
 Doing so with no params should print out usage information.
+
+## Tests

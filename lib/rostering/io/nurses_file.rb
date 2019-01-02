@@ -5,7 +5,7 @@ module Rostering
     class NursesFile
       def self.read(filename)
         File.readlines(filename).map do |name|
-          Nurse.new(name)
+          Nurse.new(name.strip)
         end
       end
     end
