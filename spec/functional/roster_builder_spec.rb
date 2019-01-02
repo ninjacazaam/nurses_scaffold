@@ -16,6 +16,8 @@ module Rostering
 
     describe '#build' do
       it 'builds a single day roster' do
+        pending
+
         nurses = Nurse.build_array %w[Andy Betty Charles]
         date_range = jan(1)..jan(1)
 

@@ -1,13 +1,12 @@
+require 'rostering/nurse'
+
 module Rostering
   class ShiftRoster
-    attr_reader :name
+    attr_reader :name, :nurses
 
-    def initialize(name)
+    def initialize(name, nurses = [])
       @name = name
-    end
-
-    def nurses
-      [Nurse.new('Nurse Name')]
+      @nurses = nurses
     end
   end
 end

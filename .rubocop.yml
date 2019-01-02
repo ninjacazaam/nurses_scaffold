@@ -9,3 +9,6 @@ Metrics/LineLength:
 
 Style/GuardClause:
   Enabled: false
+
+Metrics/BlockLength:
+  ExcludedMethods: ["describe", "context"]
