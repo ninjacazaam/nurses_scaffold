@@ -1,1 +1,1 @@
-require_relative './lib/command_line_nurses.rb'
+require_relative './lib/command_line_rostering.rb'
