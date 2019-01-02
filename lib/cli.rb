@@ -45,8 +45,8 @@ class CLI
     builder = Rostering::RosterBuilder.new
     roster = builder.build(date_range, nurses)
 
-    puts "RESULT ROSTER"
-    puts "============="
+    puts 'RESULT ROSTER'
+    puts '============='
     Rostering::IO::TextFormatter.new($stdout).write_roster roster
   end
 
@@ -71,4 +71,3 @@ class CLI
     end
   end
 end
-

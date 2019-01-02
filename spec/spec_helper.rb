@@ -1,6 +1,5 @@
 require_relative '../lib/rostering.rb'
 require_relative 'support/date_spec_helpers'
-require_relative 'support/roster_matchers'
 
 RSpec.configure do |config|
   config.expect_with :rspec do |expectations|

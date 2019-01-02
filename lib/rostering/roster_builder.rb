@@ -13,7 +13,7 @@ module Rostering
       @config = config
     end
 
-    def build(_date_range, _all_nurses)
+    def build(date_range, all_nurses)
       # Code to build the roster goes here, and a roster object is returned.
       # For now, it's just returning an empty roster
       Roster.new
