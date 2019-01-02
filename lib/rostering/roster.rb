@@ -1,11 +1,12 @@
+require 'rostering/day_roster'
+
 module Rostering
-  # Describes the nurses assigned to work for particular shifts.
+  # Describes the nurses assigned to work for particular shifts on a range of days.
   class Roster
-    # Convert this roster to a hash format that can be used
-    # for easy comparison in tests or simple inspection of
-    # the data.
-    def to_h
-      {}
+    attr_accessor :day_rosters
+
+    def initialize
+      @day_rosters = [DayRoster.new(Date.today)]
     end
   end
 end

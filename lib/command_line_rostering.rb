@@ -5,7 +5,7 @@ require 'date'
 require_relative './rostering.rb'
 
 require 'rostering/io/nurses_file.rb'
-require 'rostering/io/roster.rb'
+require 'rostering/io/text_formatter.rb'
 
 module Slop
   class DateOption < Option
@@ -47,7 +47,7 @@ class CLI
 
     puts "RESULT ROSTER"
     puts "============="
-    puts Rostering::IO::Roster.text_format roster
+    Rostering::IO::TextFormatter.new($stdout).write_roster roster
   end
 
   def help_and_exit
