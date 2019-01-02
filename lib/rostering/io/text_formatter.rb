@@ -3,7 +3,6 @@ require 'rostering/roster'
 module Rostering
   module IO
     class TextFormatter
-
       def initialize(io)
         @io = io
       end
