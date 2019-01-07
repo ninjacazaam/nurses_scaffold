@@ -22,7 +22,7 @@ Some code has already been provided to help save you time. This focusses on the 
 
 1. Providing a command line interface so that this app can be called with parameters and provide help information.
 2. Handling of input and output, such as parsing a file of nurses, and formatting the resulting roster to text for printing to standard out.
-3. A few basic data classes such as Roster, DayRoster, ShiftRoster and Nurse, mainly provided so that the input and output handling code has something to work with.
+3. A few basic data classes such as Roster and Nurse, mainly provided so that the input and output handling code has something to work with.
 
 You're welcome to change any of this code if you like, but the goal is to save you time so you can show us how you'd like to solve the interesting parts of this problem, not spend your time formatting strings for output.
 
