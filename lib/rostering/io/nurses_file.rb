@@ -4,8 +4,10 @@ module Rostering
   module IO
     class NursesFile
       def self.read(filename)
-        File.readlines(filename).map do |name|
-          Nurse.new(name.strip)
+        [].tap do |nurses|
+          CSV.foreach(filename, headers: true) do |row|
+            nurses << Nurse.new(row["uid"], row["name"])
+          end
         end
       end
     end

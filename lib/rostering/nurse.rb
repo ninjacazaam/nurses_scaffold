@@ -1,17 +1,14 @@
 module Rostering
   class Nurse
-    attr_reader :name
+    attr_reader :name, :uid
 
-    def self.build_array(names)
-      names.map { |name| new(name) }
-    end
-
-    def initialize(name)
+    def initialize(uid, name)
+      @uid = uid
       @name = name
     end
 
     def ==(other)
-      name == other.name
+      uid == other.uid
     end
   end
 end

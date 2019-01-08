@@ -6,9 +6,9 @@ module Rostering
     include DateSpecHelpers
 
     let(:io) { StringIO.new }
-    let(:bilbo) { Nurse.new('Bilbo') }
-    let(:frodo) { Nurse.new('Frodo') }
-    let(:samwise) { Nurse.new('Samwise') }
+    let(:bilbo) { Nurse.new('a', 'Bilbo') }
+    let(:frodo) { Nurse.new('b', 'Frodo') }
+    let(:samwise) { Nurse.new('c', 'Samwise') }
     let(:roster) { double('roster') }
 
     subject { IO::TextFormatter.new(io) }

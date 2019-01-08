@@ -6,10 +6,10 @@ module Rostering
   describe IO::NursesFile do
     describe '.read' do
       it 'reads two nurses from a file' do
-        expect(described_class.read(sample_data_filename('two_nurses.txt'))).to eq(
+        expect(described_class.read(sample_data_filename('two_nurses.csv'))).to eq(
           [
-            Nurse.new('Gannon'),
-            Nurse.new('Galya')
+            Nurse.new('OUGKCHWH', 'Gannon'),
+            Nurse.new('IOCGKCOZ', 'Galya')
           ]
         )
       end
