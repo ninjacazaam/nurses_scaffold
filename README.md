@@ -2,19 +2,18 @@
 
 ## Challenge
 
-In a hospital environment, nurses work a rotating shift system. There are three work shifts per day; a morning shift, an evening shift and a night shift. Each day, all three shift needs to be filled.
+You just started work for a startup that sells medical rostering software. They’ve just landed a new client, a major hospital, and everyone’s excited! However, the HR policies at the hospital are too complex for the software to handle.
 
-You have been tasked with developing a rostering system which can calculate and output the nursing roster for any specified month.
+At the hospital nurses work a rotating shift system. There are three work shifts per day; a morning shift, an evening shift and a night shift. Each day, all three shifts need to be filled.
+
+Your task is to develop a rostering system that implements the following policies:
+
+- Five nurses need to be on staff for each shift.
+- Nurses must not be expected to work more than one shift per day.
+
+The rostering system should calculate and output the nursing roster for any time period (specified by a start and end date).
 
 A list of rosterable nurses has been provided in the file spec/sample_data/nurses.csv.
-
-## Considerations
-
-- 5 nurses need to be on staff for each shift.
-- Nurses must not be expected to work more than one shift per day.
-- To maintain a healthy work/life balance, no nurse can be asked to work for more than 5 days in a row.
-- Similarly, no nurse can be expected to work more than five night shifts per month.
-- Days off must occur in groups of two or more.
 
 ## Scaffold Code
 
@@ -23,8 +22,6 @@ Some code has already been provided to help save you time. This focusses on the 
 1. Providing a command line interface so that this app can be called with parameters and provide help information.
 2. Handling of input and output, such as parsing a file of nurses, and formatting the resulting roster to text, for printing to standard out.
 3. A few basic data classes such as Roster and Nurse, mainly provided so that the input and output handling code has something to work with.
-
-You're welcome to change any of this code if you like, but the goal is to save you time so you can show us how you'd like to solve the interesting parts of this problem, not spend your time formatting strings for output.
 
 You may want to start by looking at the RosterBuilder class which is intended to do the work of creating the Roster.
 
