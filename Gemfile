@@ -1,6 +1,11 @@
 # frozen_string_literal: true
 source 'https://rubygems.org'
 
-gem 'slop'
-gem 'rspec'
-gem 'month'
+group :development do
+  gem 'slop'
+end
+
+group :test do
+  gem 'rspec'
+  gem 'month', require: false
+end
