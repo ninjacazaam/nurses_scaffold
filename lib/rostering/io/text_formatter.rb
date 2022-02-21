@@ -9,7 +9,7 @@ module Rostering
 
       def write_roster(roster)
         roster.each_shift do |date, shift_name, nurses|
-          nurse_names = nurses.map(&:name).join(', ')
+          nurse_names = nurses.join(', ')
           io << "#{date.iso8601} | #{shift_name} | #{nurse_names}\n"
         end
       end
