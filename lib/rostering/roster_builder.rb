@@ -22,7 +22,7 @@ module Rostering
         nurses_for_today = all_nurses
         shifts = {}
         @config[:shift_names].each do |shift|
-          shifts[shift.to_sym] = all_nurses.sample(@config[:nurses_per_shift])
+          shifts[shift.to_sym] = nurses_for_today.sample(@config[:nurses_per_shift])
           nurses_for_today - shifts[shift.to_sym]
         end
           roster_attributes[date] = shifts
