@@ -3,6 +3,7 @@
 require 'slop'
 require 'date'
 require_relative './rostering.rb'
+require "pry-byebug"
 
 require 'rostering/io/nurses_file.rb'
 require 'rostering/io/text_formatter.rb'
@@ -26,11 +27,11 @@ class CLI
   end
 
   def main(command_line_options = ARGV)
-    parser = Slop::Parser.new cli_flags
+    parser = Slop::Parser.new(cli_flags)
     arguments = parse_arguments(command_line_options, parser)
-    validate_arguments arguments
+    validate_arguments(arguments)
 
-    build_roster arguments
+    build_roster(arguments)
   end
 
   private
@@ -47,7 +48,7 @@ class CLI
 
     puts 'RESULT ROSTER'
     puts '============='
-    Rostering::IO::TextFormatter.new($stdout).write_roster roster
+    Rostering::IO::TextFormatter.new($stdout).write_roster(roster)
   end
 
   def help_and_exit
@@ -56,7 +57,7 @@ class CLI
   end
 
   def parse_arguments(command_line_options, parser)
-    result = parser.parse command_line_options
+    result = parser.parse(command_line_options)
 
     help_and_exit if result[:help]
     result.to_hash
