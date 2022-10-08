@@ -19,9 +19,11 @@ module Rostering
       # binding.pry
       roster_attributes = {}
       date_range.each do |date|
+        nurses_for_today = all_nurses
         shifts = {}
         @config[:shift_names].each do |shift|
           shifts[shift.to_sym] = all_nurses.sample(@config[:nurses_per_shift])
+          nurses_for_today - shifts[shift.to_sym]
         end
           roster_attributes[date] = shifts
       end
@@ -31,6 +33,9 @@ module Rostering
   end
 end
 
+
+
+# below was the old and conveluted way to do this before i realised it was simpler
 
 # roster_attributes = {}
 # date_range.each do |date|
