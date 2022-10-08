@@ -17,7 +17,7 @@ module Rostering
       # Code to build the roster goes here, and a roster object is returned.
       # For now, it's just returning an empty roster
       # binding.pry
-      roster_attributes = {shifts: @config[:shift_names]}
+      roster_attributes = {}
       date_range.each do |date|
         instance_variable_set("@#{date.strftime("%a%m%d%A")}", {})
         @config[:shift_names].each do |shift|

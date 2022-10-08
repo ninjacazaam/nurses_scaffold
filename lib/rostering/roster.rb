@@ -15,7 +15,8 @@ module Rostering
     def each_shift
       @attributes.each do |date, shifts|
         shifts.each do |shift, nurses|
-          yield(date, shift, nurses)
+          # binding.pry
+          yield(Date.parse(date), shift, nurses)
         end
       end
       # raise NotImplementedError, 'You need to implement this method so the output formatter can work'
