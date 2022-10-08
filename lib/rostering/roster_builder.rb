@@ -19,19 +19,28 @@ module Rostering
       # binding.pry
       roster_attributes = {}
       date_range.each do |date|
-        instance_variable_set("@#{date.strftime("%a%m%d%A")}", {})
+        shifts = {}
         @config[:shift_names].each do |shift|
-          instance_variable_set("@#{shift}", all_nurses.sample(@config[:nurses_per_shift]))
-          instance_variable_get("@#{date.strftime("%a%m%d%A")}".to_sym)["#{shift}".to_sym] = instance_variable_get("@#{shift}")
+          shifts[shift.to_sym] = all_nurses.sample(@config[:nurses_per_shift])
         end
-        roster_attributes["#{date}"] = instance_variable_get("@#{date.strftime("%a%m%d%A")}")
+          roster_attributes[date] = shifts
       end
       Roster.new(roster_attributes)
       # binding.pry
-
     end
   end
 end
+
+
+# roster_attributes = {}
+# date_range.each do |date|
+#   instance_variable_set("@#{date.strftime("%a%m%d%A")}", {})
+#   @config[:shift_names].each do |shift|
+#     instance_variable_set("@#{shift}", all_nurses.sample(@config[:nurses_per_shift]))
+#     instance_variable_get("@#{date.strftime("%a%m%d%A")}".to_sym)["#{shift}".to_sym] = instance_variable_get("@#{shift}")
+#   end
+#   roster_attributes["#{date}"] = instance_variable_get("@#{date.strftime("%a%m%d%A")}")
+# end
 
 
 # for each day in the date range, generate the three shifts
